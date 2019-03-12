@@ -3,12 +3,17 @@ package vendingMachine;
 public class Product {
     private int id;
     private String name;
+    private int price;
+
+    public Product(int id, String name, int price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
     public int getId() {
         return id;
     }
-
-    private int price;
 
     public int getPrice() {
         return price;
@@ -16,6 +21,9 @@ public class Product {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj)
+            return true;
+        Product product  = (Product) obj;
+        return (this.getId() == product.getId());
     }
 }
